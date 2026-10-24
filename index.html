@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#c62f25">
+  <meta name="description"
+    content="A browser sketchpad inspired by the classic red-frame toy. Draw on a pixel grid, shade, use rainbow colors, and shake to clear.">
+  <title>Etch-a-Sketch</title>
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23c62f25'/%3E%3Crect x='6' y='6' width='20' height='15' rx='2' fill='%23cfd3d0'/%3E%3Ccircle cx='9' cy='26' r='2.5' fill='%23f6f3ec'/%3E%3Ccircle cx='23' cy='26' r='2.5' fill='%23f6f3ec'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Figtree:wght@400;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <main class="stage">
+    <div class="frame" id="frame">
+      <h1 class="title">Etch-a-Sketch</h1>
+
+      <div class="screen">
+        <p class="hint" id="hint">Move over the screen to draw</p>
+        <div class="board lines" id="board" role="img" aria-label="Drawing area"></div>
+      </div>
+
+      <div class="deck">
+        <div class="knob knob-left" id="knob-left" aria-hidden="true"></div>
+
+        <div class="controls">
+          <div class="field">
+            <div class="field-head">
+              <label for="size">Grid size</label>
+              <output id="size-label" for="size">32 × 32</output>
+            </div>
+            <input class="slider" type="range" id="size" min="4" max="100" step="1" value="32">
+          </div>
+
+          <div class="row">
+            <label class="swatch">
+              <span>Color</span>
+              <input type="color" id="color" value="#2b2f33">
+            </label>
+
+            <fieldset class="segmented">
+              <legend class="sr-only">Pen</legend>
+              <label>
+                <input type="radio" name="mode" value="solid" checked>
+                <span>Solid</span>
+              </label>
+              <label>
+                <input type="radio" name="mode" value="rainbow">
+                <span>Rainbow</span>
+              </label>
+              <label>
+                <input type="radio" name="mode" value="eraser">
+                <span>Eraser</span>
+              </label>
+            </fieldset>
+          </div>
+
+          <div class="row">
+            <label class="switch">
+              <input type="checkbox" id="shading">
+              <span>Shading</span>
+            </label>
+            <label class="switch">
+              <input type="checkbox" id="grid" checked>
+              <span>Grid lines</span>
+            </label>
+            <label class="switch">
+              <input type="checkbox" id="hover" checked>
+              <span>Draw on hover</span>
+            </label>
+          </div>
+
+          <button class="shake" type="button" id="shake">Shake to clear</button>
+        </div>
+
+        <div class="knob knob-right" id="knob-right" aria-hidden="true"></div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
