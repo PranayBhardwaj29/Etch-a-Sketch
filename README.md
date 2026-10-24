@@ -4,7 +4,7 @@ A browser sketchpad inspired by the classic red-frame toy. Draw on a pixel grid,
 
 Built with plain HTML, CSS and JavaScript. No frameworks, no build step.
 
-**Live demo:** https://pranaybhardwaj29.github.io/etch-a-sketch/
+**Live demo:** https://pranaybhardwaj29.github.io/Etch-a-Sketch/
 
 ## Features
 
